@@ -34,7 +34,7 @@ class LinkedList
         current = @head
 
         until current.nil?
-            return current.val if i == index 
+            return current if i == index 
             current = current.next_node
             i += 1
         end
@@ -80,7 +80,28 @@ class LinkedList
             print "(#{current.val}) -> "
             current = current.next_node
         end
-        
+    end
+
+    def to_s_with_index
+        current = @head
+        i = 0
+        until current.nil?
+            print "#{i}: (#{current.val}) -> "
+            current = current.next_node
+            i += 1
+        end
+    end
+
+    def insert_at(val, i)
+        temp = node_at(i) # We get the node at the given index
+        pointer_node = node_at(i - 1) # We get the node before it
+        new_node = Node.new(val) # We create a new node with the given val
+        pointer_node.next_node = new_node # We set the previous nodes next_node to the new node
+        new_node.next_node = temp.next_node # We set the new nodes pointer to the old nodes pointer (you can do this in one line i just split it up to make it readable)
+    end
+
+    def remove_at(i)
+
     end
 
 end

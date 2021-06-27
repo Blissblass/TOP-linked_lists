@@ -21,4 +21,6 @@ list.head.next_node.next_node.next_node.next_node.next_node = list.tail
 # p list.contains?(7) # will return false
 # p "Item with value of 3 is at index: #{list.find(3)}" # Head will be at index 0 ! I wanted to keep the 0 based index system
 # p "Item at index 4 is: #{list.node_at(0)}"
-# p list.to_s
+# p list.to_s_with_index
+# list.insert_at("test", 3)
+# p list.to_s_with_index
