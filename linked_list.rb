@@ -94,14 +94,16 @@ class LinkedList
 
     def insert_at(val, i)
         temp = node_at(i) # We get the node at the given index
-        pointer_node = node_at(i - 1) # We get the node before it
+        prev_node = node_at(i - 1) # We get the node before it
         new_node = Node.new(val) # We create a new node with the given val
-        pointer_node.next_node = new_node # We set the previous nodes next_node to the new node
+        prev_node.next_node = new_node # We set the previous nodes next_node to the new node
         new_node.next_node = temp.next_node # We set the new nodes pointer to the old nodes pointer (you can do this in one line i just split it up to make it readable)
     end
 
     def remove_at(i)
-
+        current = node_at(i) # We get the node at given index
+        prev = node_at(i - 1) # We get the node before it
+        prev.next_node = current.next_node # We set the previous nodes pointer to the node after the node at index, thus deleting(skipping) the current node
     end
 
 end

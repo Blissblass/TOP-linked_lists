@@ -23,4 +23,9 @@ list.head.next_node.next_node.next_node.next_node.next_node = list.tail
 # p "Item at index 4 is: #{list.node_at(0)}"
 # p list.to_s_with_index
 # list.insert_at("test", 3)
+# puts "------------------------------"
 # p list.to_s_with_index
+# puts "------------------------------"
+# list.remove_at(3)
+# p list.to_s_with_index
+# puts "------------------------------"
